@@ -1,0 +1,6 @@
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/Sarayut60-068/Mini-Project-in-DCW-6035512068.git
+git push -u origin main
