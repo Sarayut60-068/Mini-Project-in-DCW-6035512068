@@ -22,6 +22,14 @@ router.use(cors({ origin: 'http://localhost:3000', credentials: true }))
 router.use(express.json())
 router.use(express.urlencoded({ extended: false }))
 
+let anima = {
+    list: [
+        { id: 1, name: 'ONE PIECE', style: 'ผจญภัย, แฟนตาซี, ต่อสู้ ',like: 1 ,reviews:"Good anima see many time", score:9,imageurl:"https://i.pinimg.com/474x/0e/c8/4b/0ec84b0d13ef5b3dfe7d10b3bfee9a05.jpg" },
+        { id: 2, name: 'Black Clover', style: 'จินตนิมิต, แอ็กชัน, ผจญภัย',like: 1 ,reviews:"So good ", score:8,imageurl:"https://www.anime-os.com/image/2020/09/Black-Clover-Cover.jpg.webp" },
+    ]
+}
+let income = 0
+
 
 router.post('/login', (req, res, next) => {
 passport.authenticate('local', { session: false }, (err, user, info) => {
@@ -102,12 +110,64 @@ router.get('/', (req, res, next) => {
 res.send('Respond without authentication');
 });
 
-let anima = {
-    list: [
-        { id: 1, name: 'ONE PIECE', style: 'ผจญภัย, แฟนตาซี, ต่อสู้ ',reviews:"Good anima see many time", score:9,imageurl:"https://i.pinimg.com/474x/0e/c8/4b/0ec84b0d13ef5b3dfe7d10b3bfee9a05.jpg" },
-        { id: 2, name: 'Black Clover', style: '	จินตนิมิต, แอ็กชัน, ผจญภัย',reviews:"So good ", score:8,imageurl:"https://www.anime-os.com/image/2020/09/Black-Clover-Cover.jpg.webp" },
-    ]
-}
+
+
+router.route('/anima')
+    .get((req, res) => res.json(anima.list))
+    .post((req, res) => { //แก้ไข อัตเดตข้อมูล
+        console.log(req.body)
+        let newanima = {}
+        newanima.id = (anima.list.length) ? anima.list[anima.list.length - 1].id + 1 : 1
+        newanima.name = req.body.name
+        newanima.style = req.body.style
+        newanima.like = req.body.like
+        newanima.reviews = req.body.reviews
+        newanima.score = req.body.score
+        newanima.imageurl = req.body.imageurl
+        anima = { "list": [...anima.list, newanima] }
+        res.json(anima.list)
+    })
+
+router.route('/anima/:ani_id')
+    .get((req, res) => {  //แสดงข้อมูล
+        const ani_id = req.params.ani_id
+        const id = anima.list.findIndex(item => +item.id === +ani_id)
+        res.json(anima.list[id])
+    })
+    .put((req, res) => { //แก้ไข อัตเดต
+        const ani_id = req.params.ani_id
+        const id = anima.list.findIndex(item => +item.id === +ani_id)
+        anima.list[id].id = req.body.id
+        anima.list[id].name = req.body.name
+        anima.list[id].style = req.body.style
+        anima.list[id].like = req.body.like
+        anima.list[id].reviews = req.body.reviews 
+        anima.list[id].like = req.body.score
+        anima.list[id].imageurl = req.body.imageurl
+        res.json(anima.list)
+    })
+    .delete((req, res) => { // ลบ
+        const ani_id = req.params.ani_id
+        anima.list = anima.list.filter(item => +item.id !== +ani_id)
+        res.json(anima.list)
+    })
+
+
+
+router.route('/income')
+    .get((req, res) => res.json(income))
+
+
+
+router.route('/like/:anima_id')
+.put((req, res) => {
+    const anima_id = req.params.anima_id
+    const id = pets.list.findIndex(item => +item.id === +anima_id)
+    anima.list[id].like = req.body.id
+   
+    res.json(pets.list)
+})
+    
 
 
 // Error Handler
@@ -121,6 +181,8 @@ res.json({
     }
 });
 });
+
+
 
 // Start Server
 app.listen(port, () => console.log(`Server is running on port ${port}`))
