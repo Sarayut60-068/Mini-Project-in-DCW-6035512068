@@ -1,0 +1,44 @@
+.container {
+  min-height: 100vh;
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: solid rgb(245, 10, 139);
+  /* background-image: url("https://i.pinimg.com/474x/c1/68/d1/c168d1090a33c45303c8da392d210edb.jpg"); */
+}
+
+.list {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 10px;
+  padding: 1px;
+  flex-wrap: wrap;
+  width: 80vw;
+}
+
+.listItem {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  padding: 10px;
+  border: 2px solid rgb(233, 14, 14);
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.byttonupdate{
+  background-color: rgb(233, 18, 150);
+  border-radius: 10%;
+  border: none;
+  color: white;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
