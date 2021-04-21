@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react'
 import styles from '../styles/Home.module.css'
 import axios from 'axios'
 import config from '../config/config'
+import Link from 'next/link'
 
 export default function Logout({ token }) {
 
@@ -27,9 +28,9 @@ export default function Logout({ token }) {
             </Head>
             <div className={styles.container}>
                 <Navbar />
-                <h1>Logout</h1>
+                <h1 >Logout</h1>
                 <div>
-                    <h2> {status}  </h2>
+                    <h2> <Link class="active" href="/"><a> {status} </a></Link>    </h2>
                 </div>
             </div>
         </Layout>

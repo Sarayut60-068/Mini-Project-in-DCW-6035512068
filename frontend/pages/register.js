@@ -6,6 +6,7 @@ import styles from '../styles/Home.module.css'
 import Navbar from '../components/navbar'
 import axios from 'axios'
 import config from '../config/config'
+import Link from 'next/link'
 
 export default function Register({ token }) {
 
@@ -95,6 +96,7 @@ export default function Register({ token }) {
 
                 <div>
                     <button onClick={register}>Register</button>
+                   
                 </div>
             </div>
         </Layout>

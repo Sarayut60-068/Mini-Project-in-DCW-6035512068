@@ -11,16 +11,16 @@ const URL2 = "http://localhost/api/purchase";
 const fetcher = url => axios.get(url).then(res => res.data)
 
 const SWR2 = () => {
-    const [animas, setAnimas] = useState({ list: [{ id: 1, type: 'ชาไทย', age: 1, weight: 5, price: 2000 },] })
+    const [animas, setAnimas] = useState({ list: [{ id: 1, name: 'ONE PIECE', style: 'ผจญภัย, แฟนตาซี, ต่อสู้ ',like: 1 ,reviews:"Good animas see many time", score:9,imageurl:"https://i.pinimg.com/474x/0e/c8/4b/0ec84b0d13ef5b3dfe7d10b3bfee9a05.jpg"},] })
     const [anima, setAnima] = useState({})
     const [id, setId] = useState(0)
     const [name, setName] = useState('')
-    const [style, setStyle] = useState(0)
+    const [style, setStyle] = useState('')
     const [like, setLike] = useState(0)
-    const [reviews, setReviews] = useState(0)
+    const [reviews, setReviews] = useState('')
     const [score, setScore] = useState(0)
-    const [imageurl, setImageurl] = useState(0)
-    const [income, setIncome] = useState(0)
+    const [imageurl, setImageurl] = useState('')
+    // const [income, setIncome] = useState(0)
   //  const { data } = useSWR(URL, fetcher)
     //const { data } = useSWR(URL2, fetcher)
 
@@ -33,7 +33,7 @@ const SWR2 = () => {
         //console.log('Anima:', animas.data)
     }
     const buyAnima = async (id) => {
-        const result = await axios.delete(`${URL2}/${id}`)
+        const result = await axios.put(`${URL2}/${id}`,{id,like})
         console.log(result.data)
         getAnimas()
     }
@@ -59,6 +59,8 @@ const SWR2 = () => {
     }
     return (<div className={styles.container}>
         <Navbar />
+        <br/>
+        <br/>
         <h1>Anime story</h1>
         <ul className={styles.list} >{printAnimas()}</ul>
     </div>

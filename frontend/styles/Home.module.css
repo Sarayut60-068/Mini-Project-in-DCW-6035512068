@@ -5,6 +5,40 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+}
+.dyo {
+    background-color: lightgrey;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    padding: 25px;
+    border: 25px solid skyblue;
+    margin: 25px;
+}
+
+.containerbackH {
+       
+    min-height: 100vh;
+    padding: 0 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(https://i.pinimg.com/originals/fc/1d/ca/fc1dcafb7f3e14592efc1dc410c3617f.gif);
+    -webkit-background-size: cover;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+}
+
+.newspaper {
+    -webkit-column-count: 2; /* Chrome, Safari, Opera */
+    -moz-column-count: 2; /* Firefox */
+    column-count: 2;
+    -webkit-column-width: 100px; /* Chrome, Safari, Opera */
+    -moz-column-width: 100px; /* Firefox */
+    column-width: 100px;
 }
 
 .content {

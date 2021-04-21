@@ -1,4 +1,3 @@
-
 const express = require('express'),
 app = express(),
 passport = require('passport'),
@@ -24,11 +23,11 @@ router.use(express.urlencoded({ extended: false }))
 
 let animas = {
     list: [
-        { id: 1, name: 'ONE PIECE', style: 'ผจญภัย, แฟนตาซี, ต่อสู้ ',like: 1 ,reviews:"Good animas see many time", score:9,imageurl:"https://i.pinimg.com/474x/0e/c8/4b/0ec84b0d13ef5b3dfe7d10b3bfee9a05.jpg" },
-        { id: 2, name: 'Black Clover', style: 'จินตนิมิต, แอ็กชัน, ผจญภัย',like: 1 ,reviews:"So good ", score:8,imageurl:"https://www.anime-os.com/image/2020/09/Black-Clover-Cover.jpg.webp" },
+        { id: 1, name: 'ONE PIECE', style: 'ผจญภัย, แฟนตาซี, ต่อสู้ ',like: 0 ,reviews:"Good animas see many time", score:9,imageurl:"https://i.pinimg.com/474x/0e/c8/4b/0ec84b0d13ef5b3dfe7d10b3bfee9a05.jpg" },
+        { id: 2, name: 'Black Clover', style: 'จินตนิมิต, แอ็กชัน, ผจญภัย',like: 0 ,reviews:"So good ", score:8,imageurl:"https://www.anime-os.com/image/2020/09/Black-Clover-Cover.jpg.webp" },
     ]
 }
-let income = 0
+
 
 
 router.post('/login', (req, res, next) => {
@@ -154,8 +153,13 @@ router.route('/animas/:ani_id')
 
 
 
-router.route('/income')
-    .get((req, res) => res.json(income))
+router.route('/purchase/:ani_id')
+    .put((req,res)=> {
+        const ani_id = req.params.ani_id
+        const id = animas.list.findIndex(item => +item.id === +ani_id)
+        animas.list[id].like = 1
+        res.json(animas.list)
+    })
 
 
 
