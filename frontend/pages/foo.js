@@ -6,6 +6,7 @@ import styles from '../styles/Home.module.css'
 import axios from 'axios'
 import withAuth from '../components/withAuth'
 import config from '../config/config'
+// import styles from '../styles/Dropdown.module.css'
 
 
 const Foo = ({ token }) => {
@@ -40,9 +41,13 @@ const Foo = ({ token }) => {
                 <h1>User Foo</h1>
                 <div>
                     {JSON.stringify(user)}
+                    
                 </div>
             </div>
         </Layout>
+
+        
+        
     )
 
 

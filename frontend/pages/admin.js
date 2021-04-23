@@ -60,14 +60,15 @@ const SWR1 = () => {
         let anima = await axios.get(`${URL}/${id}`)
         //console.log('get')
         setAnima({ id: anima.data.id, name: anima.data.name, like: anima.data.like, style: anima.data.style, reviews: anima.data.reviews, score: anima.data.score, imageurl: anima.data.imageurl })
+       
     }
 
-    const newja=(imageurl) => {
+    const newja = (imageurl) => {
         const newja = imageurl
-        console.log('imageurl'+newja)
-        return(newja)
+        console.log('imageurl' + newja)
+        return (newja)
     }
-    const handleCreate =  (name, style, like, reviews, score, imageurl) => {
+    const handleCreate = (name, style, like, reviews, score, imageurl) => {
         anima.onCreate && anima.onCreate({ name, style, like, reviews, score, imageurl })
         addAnima(name, style, like, reviews, score, imageurl)
     }
@@ -145,7 +146,9 @@ const SWR1 = () => {
         Like:<input type="number" onChange={(e) => setLike(e.target.value)} /> <br />
         Reviews:<input type="text" onChange={(e) => setReviews(e.target.value)} /> <br />
         Score:<input type="number" onChange={(e) => setScore(e.target.value)} /> <br />
+        
             <button className={styles.byttonadd} onClick={() => handleCreate(name, style, like, reviews, score, imageurl)}>Add New story Anime</button>
+        
         </ul>
     </div>
     )

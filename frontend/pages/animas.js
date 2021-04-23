@@ -4,6 +4,7 @@ import axios from 'axios'
 import Head from 'next/head'
 import styles from '../styles/animas.module.css'
 import Navbar from "../components/navbar";
+import withAuth from "../components/withAuth";
 
 const URL = "http://localhost/api/animas";
 const URL2 = "http://localhost/api/purchase";
@@ -38,6 +39,8 @@ const SWR2 = () => {
         getAnimas()
     }
 
+    
+
 
     const printAnimas = () => {
         if (animas && animas.length)
@@ -46,9 +49,9 @@ const SWR2 = () => {
                     <h6>Id:{(anima) ? anima.id : 0}</h6>
                     <img src={anima.imageurl} alt="Trulli" width="500" height="333"></img>
                     <h6>Name:{(anima) ? anima.name : '-'}</h6>
-                    <h6>Style:{(anima) ? anima.style : 0}</h6>
+                    <h6>Style:{(anima) ? anima.style : '-'}</h6>
                     <h6>Like:{(anima) ? anima.like : 0}</h6>
-                    <h6>Reviews:{(anima) ? anima.reviews : 0}</h6>
+                    <h6>Reviews:{(anima) ? anima.reviews : '-'}</h6>
                     <h6>Score:{(anima) ? anima.score : 0}</h6>
 
                     <button onClick={() => buyAnima(anima.id)} className={styles.byttonupdate} >เก็บไว้</button>
@@ -68,7 +71,7 @@ const SWR2 = () => {
 
 }
 
-export default SWR2
+export default withAuth(SWR2);
 
 export function getServerSideProps({ req, res }) {
     return { props: { token: req.cookies.token || "" } };

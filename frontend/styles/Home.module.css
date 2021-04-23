@@ -5,6 +5,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-image: url(https://64.media.tumblr.com/0c7d048622080ece90c435f30634f2c0/tumblr_mm1hmxrFNN1r0og4mo1_500.gif);
+    -webkit-background-size: cover;
+    background-size: cover;
 
 }
 .dyo {

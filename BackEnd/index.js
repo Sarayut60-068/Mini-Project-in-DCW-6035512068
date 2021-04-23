@@ -174,6 +174,28 @@ router.route('/like/:animas_id')
    
 })
 
+
+// router.route('/like/:animas_id')
+// .put((req, res) => {
+//     const animas_id = req.params.animas_id
+//     const id = animas.list.findIndex(item => +item.id === +animas_id)
+//     animas.list[id].like = 1
+//     res.json(animas.list)
+
+   
+// })
+
+router.route('/dislike/:animas_id')
+.put((req, res) => {
+    const animas_id = req.params.animas_id
+    const id = animas.list.findIndex(item => +item.id === +animas_id)
+    animas.list[id].like = 0
+    res.json(animas.list)
+
+   
+ })
+
+
 // //ดึงบทช่วยสอนทั้งหมดจากฐานข้อมูล
 // exports.findAll = (req, res) => {
   

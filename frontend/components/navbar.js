@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import styles from '../styles/Menubar.module.css'
+// import styles from '../styles/Dropdown.module.css'
 
 
 const Navbar = () => (
@@ -13,14 +14,15 @@ const Navbar = () => (
             <div class="container-fluid">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <Link class="active" href="/"><a class="nav-link active"> Home </a></Link>
+                        <Link class="active" href="/"><a class="btn btn-outline-success" type="submit"> Home </a></Link>
                     </li>
-                    <li class="nav-item">
-                        <Link href="/register"><a class="nav-link active"> Register </a></Link>
-                    </li>
-                    <li class="nav-item">
-                        <Link href="/login"><a class="nav-link active"> Login </a></Link>
-                    </li>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;
                     <li class="nav-item">
                         <Link href="/profile"><a class="nav-link active"> Profile </a></Link>
                     </li>
@@ -31,7 +33,7 @@ const Navbar = () => (
                         <Link href="/animas"><a class="nav-link active"> Anime </a></Link>
                     </li>
                     <li class="nav-item">
-                        <Link href="/showlke"><a class="nav-link active"> Anime kept my </a></Link>
+                        <Link href="/showlke"><a class="nav-link active"> MyAnimeLibrary </a></Link>
                     </li>
                     <li class="nav-item">
                         <Link href="/admin"><a class="nav-link active"> Admin </a></Link>
@@ -39,25 +41,41 @@ const Navbar = () => (
                     <li class="nav-item">
                         <Link href="/getConfig"><a class="nav-link active"> Config </a></Link>
                     </li>
-                    <li class="nav-item">
-                        <Link href="/logout"><a class="nav-link active"> Logout </a></Link>
-                    </li>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    {/* <li class="nav-item">
+                        <Link href="/search"><a class="nav-link active"> search </a></Link>
+                    </li> */}
 
+
+                    <li class="nav-item">
+                        <div className={styles.dropdown}>
+                            <span>
+                                <a class="nav-link active">ระบบ</a>
+                            </span>
+                            <div className={styles.content}>
+                                <p><a class="nav-link active btn btn-sm btn-outline-secondary" href="/register">Register</a></p>
+                                <p><a class="nav-link active btn btn-sm btn-outline-secondary" href="/login">Login</a></p>
+                                <p><a class="nav-link active btn btn-sm btn-outline-secondary" href="/logout">Logout</a></p>
+
+                            </div>
+                        </div>
+                    </li>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+           
 
                     <form class="d-flex">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"></input>
-                        <button class="btn btn-outline-success" type="submit">Search</button>
+                        <button class="btn btn-sm btn-outline-secondary" type="button">Search</button>
                     </form>
+
+                    
+
+
 
                 </ul>
             </div>
-</nav>
+        </nav>
 
         {/* </div> */}
     </div>

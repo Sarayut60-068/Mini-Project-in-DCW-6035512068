@@ -5,7 +5,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: solid rgb(245, 10, 139);
+    /* border: solid rgb(245, 10, 139); */
     background-image: url("https://lifestyle.campus-star.com/app/uploads/2016/02/6.gif");
     /* -webkit-background-size: cover;
     background-size: cover; */
@@ -23,6 +23,7 @@
     flex-wrap: wrap;
     width: 100vw;
    
+   
     
   }
   
@@ -32,6 +33,10 @@
     margin: 20px;
     padding: 40px;
     border: 2px solid rgb(19, 165, 233);
+    /* background-color: #ffffff; */
+    background-image: url("https://image.sistacafe.com/images/uploads/content_image/image/466720/1508305238-03d0eb7735cbf3c1007a9a7d777ea986.jpg");
+       -webkit-background-size: cover;
+    background-size: cover;
     font-size: 3.2rem;
     text-align: center;
   }
@@ -95,6 +100,7 @@
       margin: 20px;
       padding: 20px;
       border: 2px solid rgb(22, 45, 247);
+      background-color: #ffffff;
       font-size: 1.4rem;
       text-align: center;
   }

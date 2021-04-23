@@ -5,8 +5,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: solid rgb(245, 10, 139);
-  /* background-image: url("https://i.pinimg.com/474x/c1/68/d1/c168d1090a33c45303c8da392d210edb.jpg"); */
+  /* border: solid rgb(245, 10, 139); */
+  background-image: url("https://steamuserimages-a.akamaihd.net/ugc/102855026264484050/597CCCA5DCE1E71ADCF8BE13582F6615D35660B3/");
 }
 
 .list {
@@ -17,6 +17,8 @@
   padding: 1px;
   flex-wrap: wrap;
   width: 80vw;
+   
+
 }
 
 .listItem {
@@ -27,6 +29,9 @@
   border: 2px solid rgb(233, 14, 14);
   font-size: 1.8rem;
   text-align: center;
+  background-image: url("https://image.sistacafe.com/images/uploads/content_image/image/466720/1508305238-03d0eb7735cbf3c1007a9a7d777ea986.jpg");
+       -webkit-background-size: cover;
+    background-size: cover;
 }
 
 .byttonupdate{
