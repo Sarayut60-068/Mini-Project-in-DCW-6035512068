@@ -14,7 +14,7 @@ const Navbar = () => (
             <div class="container-fluid">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <Link class="active" href="/"><a class="btn btn-outline-success" type="submit"> Home </a></Link>
+                        <Link class="active" href="/"><a class="btn btn-success" type="submit"> Home </a></Link>
                     </li>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -22,13 +22,16 @@ const Navbar = () => (
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
                     <li class="nav-item">
                         <Link href="/profile"><a class="nav-link active"> Profile </a></Link>
                     </li>
-                    <li class="nav-item">
+                    {/* <li class="nav-item">
                         <Link href="/foo"><a class="nav-link active"> Foo </a></Link>
-                    </li>
+                    </li> */}
                     <li class="nav-item">
                         <Link href="/animas"><a class="nav-link active"> Anime </a></Link>
                     </li>
@@ -38,9 +41,10 @@ const Navbar = () => (
                     <li class="nav-item">
                         <Link href="/admin"><a class="nav-link active"> Admin </a></Link>
                     </li>
-                    <li class="nav-item">
+                   
+                    {/* <li class="nav-item">
                         <Link href="/getConfig"><a class="nav-link active"> Config </a></Link>
-                    </li>
+                    </li> */}
                     {/* <li class="nav-item">
                         <Link href="/search"><a class="nav-link active"> search </a></Link>
                     </li> */}
@@ -49,25 +53,27 @@ const Navbar = () => (
                     <li class="nav-item">
                         <div className={styles.dropdown}>
                             <span>
-                                <a class="nav-link active">ระบบ</a>
+                                <a class="nav-link active">System</a>
                             </span>
                             <div className={styles.content}>
-                                <p><a class="nav-link active btn btn-sm btn-outline-secondary" href="/register">Register</a></p>
-                                <p><a class="nav-link active btn btn-sm btn-outline-secondary" href="/login">Login</a></p>
-                                <p><a class="nav-link active btn btn-sm btn-outline-secondary" href="/logout">Logout</a></p>
+                                <p><a class="nav-link active btn btn-smbtn btn-outline-primary" href="/register">Register</a></p>
+                                <p><a class="nav-link active btn btn-sm btn btn-outline-primary" href="/login">Login</a></p>
+                                <p><a class="nav-link active btn btn-sm btn btn-outline-primary" href="/logout">Logout</a></p>
 
                             </div>
                         </div>
                     </li>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <li class="nav-item">
+                    <Link  href="mailto:s6035512068@phuket.psu.ac.th"><a class="nav-link active">  ContactAdmin </a></Link>
+                    </li>
+                
+                    
+      
 
 
            
 
-                    <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"></input>
-                        <button class="btn btn-sm btn-outline-secondary" type="button">Search</button>
-                    </form>
+                   
 
                     
 

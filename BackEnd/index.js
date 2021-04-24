@@ -195,35 +195,7 @@ router.route('/dislike/:animas_id')
    
  })
 
-
-// //ดึงบทช่วยสอนทั้งหมดจากฐานข้อมูล
-// exports.findAll = (req, res) => {
-  
-// };
-
-// // ค้นหาบทช่วยสอนเดียวที่มีรหัส
-// exports.findOne = (req, res) => {
-//     where: {
-//         anima: 'list',
-//         [or] : [
-//           {id: [1, 2, 3]},
-//           {
-//             [and]: [
-//               {id: {[gt]: 10}},
-//               {id: {[lt]: 100}}
-//             ]
-//           }
-//         ]
-//       }
-  
-// };
-// // ค้นหาบทแนะนำที่เผยแพร่ทั้งหมด
-// exports.findAllPublished = (req, res) => {
-  
-// };
-
-
-    
+   
 
 
 // Error Handler

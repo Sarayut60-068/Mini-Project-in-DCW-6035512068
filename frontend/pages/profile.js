@@ -8,6 +8,7 @@ import withAuth from '../components/withAuth'
 import config from '../config/config'
 
 const Profile1 = ({ token }) => {
+    
 
     const [user, setUser] = useState({})
 
@@ -35,14 +36,16 @@ const Profile1 = ({ token }) => {
             <Head>
                 <title>User profile</title>
             </Head>
-            <div className={styles.container}>
+            
+            <div className={styles.container}>                               
                 <Navbar />
+                
                 <h1>User profile</h1>
-                <div>
+                <div > 
                     <b>Token:</b> {token.substring(0, 15)}... <br /><br />
-                    This route is protected by token, user is required to login first.
+            
                     <br/>
-                    Otherwise, it will be redirect to Login page
+                
                     <br/><br/>
                     {JSON.stringify(user)}
                 </div>

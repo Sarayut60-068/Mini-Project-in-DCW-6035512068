@@ -20,6 +20,7 @@ export default function Home({ token }) {
         <h1>สวัสดีชาว Anime </h1>
         ถ้าคุณไม่รู้ว่าจะใช้ดูเรื่องอะไร เชิญมาดูรีวิวของเราได้เลย และถ้าคุณสนใจเรื่องไหนก็ กดไอคอน ข้างล่างไปดูได้เลย
         </div>
+      
         <div>
           <a href="https://www.anime-sugoi.com/index.html">
           <img  src="https://i.pinimg.com/favicons/b02966ad391aa0303eab350702614139804ff7bab750c358d8349d30.ico?f93935749ea0e87e2a43beb4326180e9"  width="90" height="60" ></img></a>
